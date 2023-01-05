@@ -19,12 +19,12 @@ export const searchMovies = async page => {
         store.state.message = ''
     }
     try {
-        const res = await fetch('/api/movie',{
-            method: 'POST',
-            body: {
-                title:store.state.searchText,
-                page
-            }
+        const res = await fetch('/api/movie', {
+          method: 'POST',
+          body: JSON.stringify({
+            title: store.state.searchText,
+            page
+          })
         })
         const {
             Search,
