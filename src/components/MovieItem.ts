@@ -1,7 +1,14 @@
 import { Component } from "../core/hyeok";
+import { SimpleMovie } from "../store/movie";
+
+interface props{
+    [key: string]: unknown
+    movie: SimpleMovie
+}
 
 export default class MovieItem extends Component{
-    constructor(props){
+    public props!: props
+    constructor(props: props){
         super({
             props,
             tagName: 'a'
